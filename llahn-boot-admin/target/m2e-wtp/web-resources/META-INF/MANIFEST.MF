@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: llahn-boot-admin Maven Webapp
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: lli10
+Implementation-Vendor-Id: org.llahn
+Build-Jdk: 1.8.0_102
+Implementation-URL: http://maven.apache.org
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+
