@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.llahn.boot.user.mapper.UserInfoMapper">
+	<resultMap id="BaseResultMap" type="org.llahn.boot.user.vo.UserInfo">
+		<id column="lu_id" property="luId" jdbcType="INTEGER" />
+		<result column="lu_name" property="luName" jdbcType="VARCHAR" />
+		<result column="lu_admin" property="luAdmin" jdbcType="VARCHAR" />
+		<result column="lu_passwd" property="luPasswd" jdbcType="VARCHAR" />
+		<result column="lu_sex" property="luSex" jdbcType="CHAR" />
+		<result column="lu_age" property="luAge" jdbcType="INTEGER" />
+		<result column="lu_telphone" property="luTelphone" jdbcType="VARCHAR" />
+		<result column="lu_create_time" property="luCreateTime"
+			jdbcType="TIMESTAMP" />
+		<result column="lu_lastmod_time" property="luLastmodTime"
+			jdbcType="TIMESTAMP" />
+	</resultMap>
+	<delete id="delete" parameterType="java.lang.Integer">
+		delete from llahn_user
+		where lu_id = #{luId,jdbcType=INTEGER}
+	</delete>
+	<insert id="insert" parameterType="org.llahn.boot.user.vo.UserInfo">
+		insert into llahn_user (lu_id, lu_name, lu_admin,
+		lu_passwd, lu_sex, lu_age,
+		lu_telphone, lu_create_time, lu_lastmod_time
+		)
+		values (#{luId,jdbcType=INTEGER}, #{luName,jdbcType=VARCHAR},
+		#{luAdmin,jdbcType=VARCHAR},
+		#{luPasswd,jdbcType=VARCHAR}, #{luSex,jdbcType=CHAR}, #{luAge,jdbcType=INTEGER},
+		#{luTelphone,jdbcType=VARCHAR}, #{luCreateTime,jdbcType=TIMESTAMP},
+		#{luLastmodTime,jdbcType=TIMESTAMP}
+		)
+	</insert>
+	<update id="update" parameterType="org.llahn.boot.user.vo.UserInfo">
+		update llahn_user
+		set lu_name = #{luName,jdbcType=VARCHAR},
+		lu_admin = #{luAdmin,jdbcType=VARCHAR},
+		lu_passwd = #{luPasswd,jdbcType=VARCHAR},
+		lu_sex = #{luSex,jdbcType=CHAR},
+		lu_age = #{luAge,jdbcType=INTEGER},
+		lu_telphone = #{luTelphone,jdbcType=VARCHAR},
+		lu_create_time = #{luCreateTime,jdbcType=TIMESTAMP},
+		lu_lastmod_time = #{luLastmodTime,jdbcType=TIMESTAMP}
+		where lu_id = #{luId,jdbcType=INTEGER}
+	</update>
+	<select id="findById" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+		select lu_id, lu_name, lu_admin, lu_passwd, lu_sex, lu_age,
+		lu_telphone, lu_create_time,
+		lu_lastmod_time
+		from llahn_user
+		where lu_id = #{luId,jdbcType=INTEGER}
+	</select>
+	<select id="findAll" resultMap="BaseResultMap">
+		select lu_id, lu_name, lu_admin, lu_passwd, lu_sex, lu_age, lu_telphone,
+		lu_create_time,
+		lu_lastmod_time
+		from llahn_user
+	</select>
+</mapper>

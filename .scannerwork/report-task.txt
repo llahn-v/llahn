@@ -1,0 +1,5 @@
+projectKey=llahn:latest
+serverUrl=http://192.168.18.129:9000
+dashboardUrl=http://192.168.18.129:9000/dashboard/index/llahn:latest
+ceTaskId=AV4pOUJfgly1GmBCEgWl
+ceTaskUrl=http://192.168.18.129:9000/api/ce/task?id=AV4pOUJfgly1GmBCEgWl

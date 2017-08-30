@@ -1,0 +1,3 @@
+#Server port settings
+server:
+  port: 8080
